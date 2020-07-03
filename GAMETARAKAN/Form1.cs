@@ -14,6 +14,7 @@ namespace GAMETARAKAN
     {
         public Form1()
         {
+            int i = 0;//test
             InitializeComponent();
         }
 
@@ -59,7 +60,6 @@ namespace GAMETARAKAN
                         pictureBox2.SetBounds(prevTop, prevLeft, pictureBox2.Width, pictureBox2.Height);
                     }
                 }
-
             }
         }
     }
