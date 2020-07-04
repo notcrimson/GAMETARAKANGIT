@@ -29,11 +29,63 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(easy));
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.getColor = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GAMETARAKAN.Properties.Resources.up;
+            this.pictureBox1.Location = new System.Drawing.Point(217, 168);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 20;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // getColor
+            // 
+            this.getColor.AutoSize = true;
+            this.getColor.Location = new System.Drawing.Point(33, 201);
+            this.getColor.Name = "getColor";
+            this.getColor.Size = new System.Drawing.Size(46, 13);
+            this.getColor.TabIndex = 1;
+            this.getColor.Text = "getColor";
+            this.getColor.Click += new System.EventHandler(this.getColor_Click);
+            // 
+            // easy
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1133, 699);
+            this.Controls.Add(this.getColor);
+            this.Controls.Add(this.pictureBox1);
+            this.Name = "easy";
             this.Text = "easy";
+            this.Load += new System.EventHandler(this.easy_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.easy_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.easy_KeyUp);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label getColor;
     }
 }

@@ -25,6 +25,13 @@ namespace GAMETARAKAN
 
         }
 
+        private void TARAKAN_Click(object sender, EventArgs e)
+        {
+            easy es = new easy();
+            Hide();
+            es.Show();
+        }
+
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Up)
@@ -72,12 +79,12 @@ namespace GAMETARAKAN
             int prevTop = 0;
             int prevLeft = 0;
 
-            if (goUp==true)
+            if (goUp == true)
             {
                 pictureBox2.Image = GAMETARAKAN.Properties.Resources.up;
                 prevTop = pictureBox2.Location.X;
                 prevLeft = pictureBox2.Location.Y;
-                pictureBox2.Top -= playerSpeed; 
+                pictureBox2.Top -= playerSpeed;
             }
             if (goDown == true)
             {
@@ -104,7 +111,7 @@ namespace GAMETARAKAN
             {
                 if (x is Label)
                 {
-                    if ((string)x.Tag =="maze")
+                    if ((string)x.Tag == "maze")
                     {
                         if (pictureBox2.Bounds.IntersectsWith(x.Bounds))
                         {
