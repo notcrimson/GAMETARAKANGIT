@@ -74,24 +74,28 @@ namespace GAMETARAKAN
 
             if (goUp==true)
             {
+                pictureBox2.Image = GAMETARAKAN.Properties.Resources.up;
                 prevTop = pictureBox2.Location.X;
                 prevLeft = pictureBox2.Location.Y;
-                pictureBox2.Top -= playerSpeed;
+                pictureBox2.Top -= playerSpeed; 
             }
             if (goDown == true)
             {
+                pictureBox2.Image = GAMETARAKAN.Properties.Resources.down;
                 prevTop = pictureBox2.Location.X;
                 prevLeft = pictureBox2.Location.Y;
                 pictureBox2.Top += playerSpeed;
             }
             if (goLeft == true)
             {
+                pictureBox2.Image = GAMETARAKAN.Properties.Resources.left;
                 prevTop = pictureBox2.Location.X;
                 prevLeft = pictureBox2.Location.Y;
                 pictureBox2.Left -= playerSpeed;
             }
             if (goRight == true)
             {
+                pictureBox2.Image = GAMETARAKAN.Properties.Resources.right;
                 prevTop = pictureBox2.Location.X;
                 prevLeft = pictureBox2.Location.Y;
                 pictureBox2.Left += playerSpeed;
