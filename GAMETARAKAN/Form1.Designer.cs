@@ -43,7 +43,7 @@
             this.pictureBox2.Image = global::GAMETARAKAN.Properties.Resources.up;
             this.pictureBox2.Location = new System.Drawing.Point(113, 104);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 32);
+            this.pictureBox2.Size = new System.Drawing.Size(30, 25);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
