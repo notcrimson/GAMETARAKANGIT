@@ -30,30 +30,30 @@ namespace GAMETARAKAN
             if (e.KeyData == Keys.Up)
             {
                 goUp = true;
-                //goLeft = false;
-                //goRight = false;
+                goLeft = false;
+                goRight = false;
 
             }
 
             if (e.KeyData == Keys.Down)
             {
                 goDown = true;
-                //goLeft = false;
-                //goRight = false;
+                goLeft = false;
+                goRight = false;
             }
 
             if (e.KeyData == Keys.Left)
             {
                 goLeft = true;
-                //goUp = false;
-                //goDown = false;
+                goUp = false;
+                goDown = false;
             }
 
             if (e.KeyData == Keys.Right)
             {
                 goRight = true;
-                //goUp = false;
-                //goDown = false;
+                goUp = false;
+                goDown = false;
             }
             //foreach (Label lbl in this.Controls.OfType<Label>())
             //{
@@ -108,7 +108,7 @@ namespace GAMETARAKAN
                     {
                         if (pictureBox2.Bounds.IntersectsWith(x.Bounds))
                         {
-                            pictureBox2.SetBounds(x.Location.X+20, x.Location.Y+20, pictureBox2.Width, pictureBox2.Height); //pictureBox2.Top = x.Top - pictureBox2.Height;
+                            pictureBox2.SetBounds(prevTop, prevLeft, pictureBox2.Width, pictureBox2.Height); //pictureBox2.Top = x.Top - pictureBox2.Height;
                         }
                     }
                 }
