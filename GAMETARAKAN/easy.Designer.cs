@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(easy));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.getColor = new System.Windows.Forms.Label();
@@ -67,8 +66,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1133, 699);
+            this.BackgroundImage = global::GAMETARAKAN.Properties.Resources.maze2;
+            this.ClientSize = new System.Drawing.Size(872, 426);
             this.Controls.Add(this.getColor);
             this.Controls.Add(this.pictureBox1);
             this.Name = "easy";

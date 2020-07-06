@@ -16,7 +16,6 @@ namespace GAMETARAKAN
         int playerSpeed = 3;
         public Form1()
         {
-            int i = 0;//test
             InitializeComponent();
         }
 

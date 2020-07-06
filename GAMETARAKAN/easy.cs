@@ -14,7 +14,7 @@ namespace GAMETARAKAN
     public partial class easy : Form
     {
         public Image a= GAMETARAKAN.Properties.Resources.down;
-        private dynamic Bitmap myBitmap = new Bitmap(BackgroundImage);
+        Bitmap myBitmap = new Bitmap(GAMETARAKAN.Properties.Resources.maze2);
         bool goUp, goLeft, goRight, goDown;
         bool bitmapCheck=false;
         int playerSpeed = 3;
