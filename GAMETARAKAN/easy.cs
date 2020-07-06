@@ -29,6 +29,92 @@ namespace GAMETARAKAN
 
         }
 
+        //DIRECTION TEST
+        public void test_direction() 
+        {
+            int pl_h = pictureBox1.Height; //player height
+            int pl_w = pictureBox1.Width; //player width
+            int j_p = 5; //jump pixels
+
+            //checking if player can go in this direction
+            bool top_check()
+            {
+                bool check = false;
+                int p_x = pictureBox1.Location.X;
+                int p_y = pictureBox1.Location.Y + 5;
+
+                for (int i = p_x; i < (p_x + pl_w); i += j_p)
+                {
+                    Bitmap myBitmap = new Bitmap(BackgroundImage);
+                    Color pxl = myBitmap.GetPixel(i,p_y);
+                    if (pxl.A == 255 && pxl.R == 0 && pxl.G == 0 && pxl.B == 0)
+                    {
+                        break;
+                    }
+                    check = true;
+                }
+                return check;
+            }
+
+            bool bottom_check()
+            {
+                bool check = false;
+                int p_x = pictureBox1.Location.X;
+                int p_y = pictureBox1.Location.Y - pl_h - 5;
+
+                for (int i = p_x; i < (p_x + pl_w); i += j_p)
+                {
+                    Bitmap myBitmap = new Bitmap(BackgroundImage);
+                    Color pxl = myBitmap.GetPixel(i, p_y);
+                    if (pxl.A == 255 && pxl.R == 0 && pxl.G == 0 && pxl.B == 0)
+                    {
+                        break;
+                    }
+                    check = true;
+                }
+                return check;
+            }
+
+            bool right_check()
+            {
+                bool check = false;
+                int p_x = pictureBox1.Location.X + pl_w + 5;
+                int p_y = pictureBox1.Location.Y;
+
+                for (int i = p_y; i > (p_y - pl_h); i -= j_p)
+                {
+                    Bitmap myBitmap = new Bitmap(BackgroundImage);
+                    Color pxl = myBitmap.GetPixel(p_x, i);
+                    if (pxl.A == 255 && pxl.R == 0 && pxl.G == 0 && pxl.B == 0)
+                    {
+                        break;
+                    }
+                    check = true;
+                }
+                return check;
+            }
+
+            bool left_check()
+            {
+                bool check = false;
+                int p_x = pictureBox1.Location.X - 5;
+                int p_y = pictureBox1.Location.Y;
+
+                for (int i = p_y; i > (p_y - pl_h); i -= j_p)
+                {
+                    Bitmap myBitmap = new Bitmap(BackgroundImage);
+                    Color pxl = myBitmap.GetPixel(p_x, i);
+                    if (pxl.A == 255 && pxl.R == 0 && pxl.G == 0 && pxl.B == 0)
+                    {
+                        break;
+                    }
+                    check = true;
+                }
+                return check;
+            }
+
+        }
+
         private void getColor_Click(object sender, EventArgs e)
         {
             Bitmap myBitmap = new Bitmap(BackgroundImage);
