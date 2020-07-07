@@ -49,13 +49,12 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 20;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // getColor
             // 
             this.getColor.AutoSize = true;
-            this.getColor.Location = new System.Drawing.Point(33, 201);
+            this.getColor.Location = new System.Drawing.Point(404, 244);
             this.getColor.Name = "getColor";
             this.getColor.Size = new System.Drawing.Size(46, 13);
             this.getColor.TabIndex = 1;
@@ -65,7 +64,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(415, 166);
+            this.label1.Location = new System.Drawing.Point(404, 269);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 2;

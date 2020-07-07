@@ -47,7 +47,7 @@ namespace GAMETARAKAN
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show($"X:{pictureBox1.Location.X} \n Y:{pictureBox1.Location.Y}");
         }
 
         public bool top_check()
@@ -71,7 +71,7 @@ namespace GAMETARAKAN
         {
             bool check = false;
             int p_x = pictureBox1.Location.X;
-            int p_y = pictureBox1.Location.Y - pictureBox1.Height - 5;
+            int p_y = pictureBox1.Location.Y + pictureBox1.Height + 5;
 
             for (int i = p_x; i < (p_x + pictureBox1.Width); i += j_p)
             {
@@ -90,7 +90,7 @@ namespace GAMETARAKAN
             int p_x = pictureBox1.Location.X + pictureBox1.Width + 5;
             int p_y = pictureBox1.Location.Y;
 
-            for (int i = p_y; i > (p_y - pictureBox1.Height); i -= j_p)
+            for (int i = p_y; i < (p_y + pictureBox1.Height); i += j_p)
             {
                 Color pxl = myBitmap.GetPixel(p_x, i);
                 if (pxl.A == 255 && pxl.R == 0 && pxl.G == 0 && pxl.B == 0)
@@ -108,7 +108,7 @@ namespace GAMETARAKAN
             int p_x = pictureBox1.Location.X - 5;
             int p_y = pictureBox1.Location.Y;
 
-            for (int i = p_y; i > (p_y - pictureBox1.Height); i -= j_p)
+            for (int i = p_y; i < (p_y + pictureBox1.Height); i += j_p)
             {
                 Color pxl = myBitmap.GetPixel(p_x, i);
                 if (pxl.A == 255 && pxl.R == 0 && pxl.G == 0 && pxl.B == 0)
@@ -195,6 +195,12 @@ namespace GAMETARAKAN
 
             //prevTop = pictureBox1.Location.X;
             //prevLeft = pictureBox1.Location.Y;
+
+            //top_check();
+            //bottom_check();
+            //left_check();
+            //right_check();
+
             if (goUp == true && top_check() == true)
             {
                 pictureBox1.Image = GAMETARAKAN.Properties.Resources.up;
