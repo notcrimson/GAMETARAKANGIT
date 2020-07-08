@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace GAMETARAKAN
 {
@@ -14,6 +15,8 @@ namespace GAMETARAKAN
     {
         bool goUp, goDown, goLeft, goRight;
         int playerSpeed = 3;
+        int prevTop = 0;
+        int prevLeft = 0;
         public Form1()
         {
             InitializeComponent();
@@ -34,33 +37,35 @@ namespace GAMETARAKAN
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Up)
-            {
+            { 
+            
+                pictureBox2.Image = GAMETARAKAN.Properties.Resources.up;
                 goUp = true;
                 goLeft = false;
                 goRight = false;
 
             }
-
             if (e.KeyData == Keys.Down)
             {
+                pictureBox2.Image = GAMETARAKAN.Properties.Resources.down;
                 goDown = true;
                 goLeft = false;
                 goRight = false;
             }
-
             if (e.KeyData == Keys.Left)
             {
+                pictureBox2.Image = GAMETARAKAN.Properties.Resources.left;
                 goLeft = true;
                 goUp = false;
                 goDown = false;
             }
-
             if (e.KeyData == Keys.Right)
             {
+                pictureBox2.Image = GAMETARAKAN.Properties.Resources.right;
                 goRight = true;
                 goUp = false;
                 goDown = false;
-            }
+            } 
             //foreach (Label lbl in this.Controls.OfType<Label>())
             //{
             //    if (lbl.Tag.ToString() == "maze")
@@ -75,37 +80,35 @@ namespace GAMETARAKAN
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            int prevTop = 0;
-            int prevLeft = 0;
+            prevTop = pictureBox2.Location.X;
+            prevLeft = pictureBox2.Location.Y;
 
             if (goUp == true)
-            {
-                pictureBox2.Image = GAMETARAKAN.Properties.Resources.up;
-                prevTop = pictureBox2.Location.X;
-                prevLeft = pictureBox2.Location.Y;
+            { 
+            
+                //prevTop = pictureBox2.Location.X;
+                //prevLeft = pictureBox2.Location.Y;
                 pictureBox2.Top -= playerSpeed;
             }
             if (goDown == true)
             {
-                pictureBox2.Image = GAMETARAKAN.Properties.Resources.down;
-                prevTop = pictureBox2.Location.X;
-                prevLeft = pictureBox2.Location.Y;
+                //prevTop = pictureBox2.Location.X;
+                //prevLeft = pictureBox2.Location.Y;
                 pictureBox2.Top += playerSpeed;
             }
             if (goLeft == true)
             {
-                pictureBox2.Image = GAMETARAKAN.Properties.Resources.left;
-                prevTop = pictureBox2.Location.X;
-                prevLeft = pictureBox2.Location.Y;
+                //prevTop = pictureBox2.Location.X;
+                //prevLeft = pictureBox2.Location.Y;
                 pictureBox2.Left -= playerSpeed;
             }
             if (goRight == true)
             {
-                pictureBox2.Image = GAMETARAKAN.Properties.Resources.right;
-                prevTop = pictureBox2.Location.X;
-                prevLeft = pictureBox2.Location.Y;
+                //prevTop = pictureBox2.Location.X;
+                //prevLeft = pictureBox2.Location.Y;
                 pictureBox2.Left += playerSpeed;
             }
+
             foreach (Control x in this.Controls)
             {
                 if (x is Label)
@@ -119,6 +122,7 @@ namespace GAMETARAKAN
                     }
                 }
             }
+            
             //foreach (Label lbl in this.Controls.OfType<Label>())
             //{
             //    if (lbl.Tag.ToString() == "maze")

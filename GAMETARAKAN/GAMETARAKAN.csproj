@@ -103,19 +103,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\down.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\left.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\right.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\up.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\maze2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\player_icons\down.png" />
+    <Content Include="Resources\player_icons\left.png" />
+    <Content Include="Resources\player_icons\right.png" />
+    <Content Include="Resources\player_icons\up.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

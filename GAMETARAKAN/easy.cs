@@ -50,20 +50,33 @@ namespace GAMETARAKAN
             MessageBox.Show($"X:{pictureBox1.Location.X} \n Y:{pictureBox1.Location.Y}");
         }
 
+
+
+        List<int> listTopCheck = new List<int>();
         public bool top_check()
         {
             bool check = false;
             int p_x = pictureBox1.Location.X;
-            int p_y = pictureBox1.Location.Y + 5;
+            int p_y = pictureBox1.Location.Y - 5;
+
 
             for (int i = p_x; i < (p_x + pictureBox1.Width); i += j_p)
             {
-                Color pxl = myBitmap.GetPixel(i, p_y);
-                if (pxl.A == 255 && pxl.R == 0 && pxl.G == 0 && pxl.B == 0)
+                listTopCheck.Add(i);
+                //Color pxl = myBitmap.GetPixel(i, p_y);
+                //if (pxl.R != 255 && pxl.G != 255 && pxl.B != 255)
+                //{
+                //    break;
+                //}
+                //check = true;
+            }
+            foreach (var t in listTopCheck)
+            {
+                Color pxl = myBitmap.GetPixel(t, p_y);
+                if (pxl.R != 255 && pxl.G != 255 && pxl.B != 255)
                 {
                     break;
                 }
-                check = true;
             }
             return check;
         }
@@ -76,7 +89,7 @@ namespace GAMETARAKAN
             for (int i = p_x; i < (p_x + pictureBox1.Width); i += j_p)
             {
                 Color pxl = myBitmap.GetPixel(i, p_y);
-                if (pxl.A == 255 && pxl.R == 0 && pxl.G == 0 && pxl.B == 0)
+                if (pxl.R != 255 && pxl.G != 255 && pxl.B != 255)
                 {
                     break;
                 }
@@ -93,7 +106,7 @@ namespace GAMETARAKAN
             for (int i = p_y; i < (p_y + pictureBox1.Height); i += j_p)
             {
                 Color pxl = myBitmap.GetPixel(p_x, i);
-                if (pxl.A == 255 && pxl.R == 0 && pxl.G == 0 && pxl.B == 0)
+                if (pxl.R != 255 && pxl.G != 255 && pxl.B != 255)
                 {
                     break;
                 }
@@ -111,7 +124,7 @@ namespace GAMETARAKAN
             for (int i = p_y; i < (p_y + pictureBox1.Height); i += j_p)
             {
                 Color pxl = myBitmap.GetPixel(p_x, i);
-                if (pxl.A == 255 && pxl.R == 0 && pxl.G == 0 && pxl.B == 0)
+                if (pxl.R != 255 && pxl.G != 255 && pxl.B != 255)
                 {
                     break;
                 }
@@ -131,7 +144,8 @@ namespace GAMETARAKAN
             //var testD = new test_direction();
             if (e.KeyData == Keys.Up)
             {
-                timer1.Enabled = true;
+                //timer1.Enabled = true;
+                top_check();
                 goUp = true;
                 goLeft = false;
                 goRight = false;
@@ -140,7 +154,8 @@ namespace GAMETARAKAN
 
             if (e.KeyData == Keys.Down)
             {
-                timer1.Enabled = true;
+                //timer1.Enabled = true;
+                bottom_check();
                 goDown = true;
                 goLeft = false;
                 goRight = false;
@@ -148,7 +163,8 @@ namespace GAMETARAKAN
 
             if (e.KeyData == Keys.Left)
             {
-                timer1.Enabled = true;
+                //timer1.Enabled = true;
+                left_check();
                 goLeft = true;
                 goUp = false;
                 goDown = false;
@@ -156,7 +172,8 @@ namespace GAMETARAKAN
 
             if (e.KeyData == Keys.Right)
             {
-                timer1.Enabled = true;
+                //timer1.Enabled = true;
+                right_check();
                 goRight = true;
                 goUp = false;
                 goDown = false;
@@ -167,71 +184,75 @@ namespace GAMETARAKAN
         {
             if (e.KeyData == Keys.Up)
             {
-                timer1.Enabled = false;
+                //timer1.Enabled = false;
                 goUp = false;
             }
             if (e.KeyData == Keys.Down)
             {
-                timer1.Enabled = false;
+                //timer1.Enabled = false;
                 goDown = false;
             }
             if (e.KeyData == Keys.Left)
             {
-                timer1.Enabled = false;
+                //timer1.Enabled = false;
                 goLeft = false;
             }
             if (e.KeyData == Keys.Right)
             {
-                timer1.Enabled = false;
+                //timer1.Enabled = false;
                 goRight = false;
             }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            int prevTop = 0;
-            int prevLeft = 0;
+            //int prevTop = 0;
+            //int prevLeft = 0;
+
             //Color blackPixel = myBitmap.GetPixel(prevTop, prevLeft);
 
             //prevTop = pictureBox1.Location.X;
             //prevLeft = pictureBox1.Location.Y;
 
-            //top_check();
-            //bottom_check();
-            //left_check();
-            //right_check();
-
-            if (goUp == true && top_check() == true)
+            if (goUp == true)
             {
-                pictureBox1.Image = GAMETARAKAN.Properties.Resources.up;
-                //prevTop = pictureBox1.Location.X;
-                //prevLeft = pictureBox1.Location.Y;
-                //blackPixel = myBitmap.GetPixel(prevTop - pictureBox1.Width, prevLeft);
-                pictureBox1.Top -= playerSpeed;
+                
+                if (top_check()==true)
+                {
+                    pictureBox1.Image = GAMETARAKAN.Properties.Resources.up;
+                    //blackPixel = myBitmap.GetPixel(prevTop - pictureBox1.Width, prevLeft);
+                    pictureBox1.Top -= playerSpeed;
+                }
             }
-            if (goDown == true && bottom_check() == true)
+            if (goDown == true)
             {
-                pictureBox1.Image = GAMETARAKAN.Properties.Resources.down;
-                //prevTop = pictureBox1.Location.X;
-                //prevLeft = pictureBox1.Location.Y;
-                //blackPixel = myBitmap.GetPixel(prevTop + pictureBox1.Width, prevLeft);
-                pictureBox1.Top += playerSpeed;
+                
+                if (bottom_check()==true)
+                {
+                    pictureBox1.Image = GAMETARAKAN.Properties.Resources.down;
+                    //blackPixel = myBitmap.GetPixel(prevTop + pictureBox1.Width, prevLeft);
+                    pictureBox1.Top += playerSpeed;
+                }
             }
-            if (goLeft == true && left_check() == true)
+            if (goLeft == true)
             {
-                pictureBox1.Image = GAMETARAKAN.Properties.Resources.left;
-                //prevTop = pictureBox1.Location.X;
-                //prevLeft = pictureBox1.Location.Y;
-                //blackPixel = myBitmap.GetPixel(prevTop, prevLeft - pictureBox1.Height);
-                pictureBox1.Left -= playerSpeed;
+               
+                if (left_check() == true)
+                {
+                    pictureBox1.Image = GAMETARAKAN.Properties.Resources.left;
+                    //blackPixel = myBitmap.GetPixel(prevTop, prevLeft - pictureBox1.Height);
+                    pictureBox1.Left -= playerSpeed;
+                }
             }
-            if (goRight == true && right_check() == true)
+            if (goRight == true)
             {
-                pictureBox1.Image = GAMETARAKAN.Properties.Resources.right;
-                //prevTop = pictureBox1.Location.X;
-                //prevLeft = pictureBox1.Location.Y;
-                //blackPixel = myBitmap.GetPixel(prevTop, prevLeft + pictureBox1.Height);
-                pictureBox1.Left += playerSpeed;
+                
+                if (right_check()==true)
+                {
+                    pictureBox1.Image = GAMETARAKAN.Properties.Resources.right;
+                    //blackPixel = myBitmap.GetPixel(prevTop, prevLeft + pictureBox1.Height);
+                    pictureBox1.Left += playerSpeed;
+                }
             }
 
 
@@ -242,19 +263,20 @@ namespace GAMETARAKAN
             //}
 
 
-            foreach (Control x in this.Controls)
-            {
-                if (x is Label)
-                {
-                    if ((string)x.Tag == "maze")
-                    {
-                        if (pictureBox1.Bounds.IntersectsWith(x.Bounds))
-                        {
-                            //pictureBox1.Top = x.Top - pictureBox1.Height;
-                        }
-                    }
-                }
-            }
+            //foreach (Control x in this.Controls)
+            //{
+            //    if (x is Label)
+            //    {
+            //        if ((string)x.Tag == "maze")
+            //        {
+            //            if (pictureBox1.Bounds.IntersectsWith(x.Bounds))
+            //            {
+            //                //pictureBox1.Top = x.Top - pictureBox1.Height;
+            //            }
+            //        }
+            //    }
+            //}
+            Invalidate();
         }
     }
 }
