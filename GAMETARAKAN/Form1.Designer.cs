@@ -34,6 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.TARAKAN = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -86,29 +87,38 @@
             this.timer1.Interval = 20;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // TARAKAN
+            // 
+            this.TARAKAN.AutoSize = true;
+            this.TARAKAN.Location = new System.Drawing.Point(362, 38);
+            this.TARAKAN.Name = "TARAKAN";
+            this.TARAKAN.Size = new System.Drawing.Size(81, 13);
+            this.TARAKAN.TabIndex = 4;
+            this.TARAKAN.Text = "Go to easy form";
+            this.TARAKAN.Click += new System.EventHandler(this.TARAKAN_Click);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::GAMETARAKAN.Properties.Resources.up;
-            this.pictureBox2.Location = new System.Drawing.Point(421, 203);
+            this.pictureBox2.Location = new System.Drawing.Point(557, 355);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(47, 42);
+            this.pictureBox2.Size = new System.Drawing.Size(30, 25);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GAMETARAKAN.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(807, 470);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.TARAKAN);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox2);
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
@@ -120,12 +130,14 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label TARAKAN;
     }
 }
 
