@@ -19,19 +19,26 @@ namespace GAMETARAKAN
 
         private void NewGame_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            Game game = new Game();
             Hide();
-            form1.Show();
+            game.Show();
         }
 
         private void NewGame_MouseHover(object sender, EventArgs e)
         {
             NewGame.BackColor = Color.LightGray;
+            NewGame.BorderStyle = BorderStyle.Fixed3D;
         }
 
         private void NewGame_MouseLeave(object sender, EventArgs e)
         {
             NewGame.BackColor = Color.White;
+            NewGame.BorderStyle = BorderStyle.None;
+        }
+
+        private void Menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

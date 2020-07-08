@@ -1,6 +1,6 @@
 ﻿namespace GAMETARAKAN
 {
-    partial class Form1
+    partial class Game
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Finish = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -90,7 +90,15 @@
             this.label59 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.LeaveGame = new System.Windows.Forms.Label();
+            this.Time = new System.Windows.Forms.Timer(this.components);
+            this.Clock_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -119,15 +127,15 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // label1
+            // Finish
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(738, 311);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Tag = "finish";
-            this.label1.Text = "FINISH";
+            this.Finish.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Finish.Location = new System.Drawing.Point(738, 320);
+            this.Finish.Name = "Finish";
+            this.Finish.Size = new System.Drawing.Size(43, 15);
+            this.Finish.TabIndex = 2;
+            this.Finish.Tag = "finish";
+            this.Finish.Text = "FINISH";
             // 
             // label3
             // 
@@ -699,11 +707,76 @@
             this.label60.Tag = "maze";
             this.label60.Text = "label1";
             // 
-            // Form1
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GAMETARAKAN.Properties.Resources.bottom;
+            this.pictureBox1.Location = new System.Drawing.Point(803, 105);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(145, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 64;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GAMETARAKAN.Properties.Resources.bottom;
+            this.pictureBox3.Location = new System.Drawing.Point(803, 417);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(145, 46);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 64;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label32
+            // 
+            this.label32.BackColor = System.Drawing.Color.White;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label32.Location = new System.Drawing.Point(821, 112);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(111, 31);
+            this.label32.TabIndex = 65;
+            this.label32.Text = "label32";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LeaveGame
+            // 
+            this.LeaveGame.BackColor = System.Drawing.Color.White;
+            this.LeaveGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LeaveGame.Location = new System.Drawing.Point(821, 423);
+            this.LeaveGame.Name = "LeaveGame";
+            this.LeaveGame.Size = new System.Drawing.Size(110, 33);
+            this.LeaveGame.TabIndex = 65;
+            this.LeaveGame.Text = "Give up";
+            this.LeaveGame.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LeaveGame.Click += new System.EventHandler(this.LeaveGame_Click);
+            this.LeaveGame.MouseLeave += new System.EventHandler(this.Leave_MouseLeave);
+            this.LeaveGame.MouseHover += new System.EventHandler(this.Leave_MouseHover);
+            // 
+            // Time
+            // 
+            this.Time.Enabled = true;
+            this.Time.Interval = 1000;
+            this.Time.Tick += new System.EventHandler(this.Clock);
+            // 
+            // Clock_label
+            // 
+            this.Clock_label.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Clock_label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Clock_label.Location = new System.Drawing.Point(822, 39);
+            this.Clock_label.Name = "Clock_label";
+            this.Clock_label.Size = new System.Drawing.Size(109, 23);
+            this.Clock_label.TabIndex = 66;
+            // 
+            // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 470);
+            this.ClientSize = new System.Drawing.Size(954, 473);
+            this.Controls.Add(this.Clock_label);
+            this.Controls.Add(this.LeaveGame);
+            this.Controls.Add(this.label32);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label60);
             this.Controls.Add(this.label38);
             this.Controls.Add(this.label59);
@@ -761,15 +834,19 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Finish);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
+            this.Name = "Game";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "TARAKAN";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Game_FormClosing);
+            this.Load += new System.EventHandler(this.Game_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -779,7 +856,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Finish;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -837,6 +914,12 @@
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label LeaveGame;
+        private System.Windows.Forms.Timer Time;
+        private System.Windows.Forms.Label Clock_label;
     }
 }
 

@@ -11,24 +11,79 @@ using System.Windows.Forms.VisualStyles;
 
 namespace GAMETARAKAN
 {
-    public partial class Form1 : Form
+    public partial class Game : Form
     {
         bool goUp, goDown, goLeft, goRight;
-        int playerSpeed = 3;
+        int playerSpeed = 3; //на сколько пикселей перемещается игрок
         int prevTop = 0;
         int prevLeft = 0;
-        public Form1()
+        int seconds = 0;
+        int minutes = 0;
+        public static string endTime;
+        public Game()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Game_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        private void Leave_MouseHover(object sender, EventArgs e)
         {
+            LeaveGame.BackColor = Color.LightGray;
+            LeaveGame.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void Leave_MouseLeave(object sender, EventArgs e)
+        {
+            LeaveGame.BackColor = Color.White;
+            LeaveGame.BorderStyle = BorderStyle.None;
+        }
+
+        private void LeaveGame_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            Close();
+            menu.Show();
+        }
+
+        private void Clock(object sender, EventArgs e)
+        {
+            seconds++;
+            if (seconds >= 60)
+            {
+                minutes++;
+                seconds = 0;
+            }
+            if (seconds >= 10)
+            {
+                Clock_label.Text = $"{minutes.ToString()}:{seconds.ToString()}";
+            }
+            else
+            {
+                Clock_label.Text = $"{minutes.ToString()}:0{seconds.ToString()}";
+            }
+
+        }
+
+        private void Game_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Game_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            //if (pictureBox2.Bounds.IntersectsWith(Finish.Bounds))
+            //{
+            //    //do finish sign with time and leave to menu
+            //    endTime = Clock_label.Text = $"{minutes.ToString()}:{seconds.ToString()}";
+            //    MessageBox.Show(endTime);
+            //}
+
+
             if (e.KeyData == Keys.Up)
             {
                 if (goUp == false)
@@ -106,16 +161,12 @@ namespace GAMETARAKAN
                             break;
                         }
                     }
-                    else if ((string)x.Tag == "finish")
-                    {
-                        //do finish sign with time and leave to menu
-                        break;
-                    }
+
                 }
             }
         }
 
-        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        private void Game_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Up)
             {
