@@ -17,11 +17,21 @@ namespace GAMETARAKAN
             InitializeComponent();
         }
 
-        private void level_Click(object sender, EventArgs e)
+        private void NewGame_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
             Hide();
             form1.Show();
+        }
+
+        private void NewGame_MouseHover(object sender, EventArgs e)
+        {
+            NewGame.BackColor = Color.LightGray;
+        }
+
+        private void NewGame_MouseLeave(object sender, EventArgs e)
+        {
+            NewGame.BackColor = Color.White;
         }
     }
 }

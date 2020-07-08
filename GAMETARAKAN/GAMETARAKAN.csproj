@@ -115,6 +115,7 @@
     <None Include="Resources\maze2.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\bottom.png" />
     <Content Include="Resources\player_icons\down.png" />
     <Content Include="Resources\player_icons\left.png" />
     <Content Include="Resources\player_icons\right.png" />
