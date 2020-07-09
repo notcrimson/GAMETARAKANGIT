@@ -90,16 +90,13 @@
             this.label59 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label32 = new System.Windows.Forms.Label();
             this.LeaveGame = new System.Windows.Forms.Label();
             this.Time = new System.Windows.Forms.Timer(this.components);
             this.Clock_label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -709,16 +706,6 @@
             this.label60.Tag = "maze";
             this.label60.Text = "label1";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GAMETARAKAN.Properties.Resources.bottom;
-            this.pictureBox1.Location = new System.Drawing.Point(803, 105);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(145, 46);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 64;
-            this.pictureBox1.TabStop = false;
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::GAMETARAKAN.Properties.Resources.bottom;
@@ -728,17 +715,6 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 64;
             this.pictureBox3.TabStop = false;
-            // 
-            // label32
-            // 
-            this.label32.BackColor = System.Drawing.Color.White;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label32.Location = new System.Drawing.Point(821, 112);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(111, 31);
-            this.label32.TabIndex = 65;
-            this.label32.Text = "label32";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LeaveGame
             // 
@@ -798,9 +774,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Clock_label);
             this.Controls.Add(this.LeaveGame);
-            this.Controls.Add(this.label32);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label60);
             this.Controls.Add(this.label38);
             this.Controls.Add(this.label59);
@@ -869,7 +843,6 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -939,9 +912,7 @@
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label LeaveGame;
         private System.Windows.Forms.Timer Time;
         private System.Windows.Forms.Label Clock_label;
