@@ -31,7 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.NewGame = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.Exit = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -68,19 +71,46 @@
             this.NewGame.MouseLeave += new System.EventHandler(this.NewGame_MouseLeave);
             this.NewGame.MouseHover += new System.EventHandler(this.NewGame_MouseHover);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GAMETARAKAN.Properties.Resources.bottom;
+            this.pictureBox2.Location = new System.Drawing.Point(247, 208);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(291, 56);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // Exit
+            // 
+            this.Exit.BackColor = System.Drawing.Color.White;
+            this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Exit.Location = new System.Drawing.Point(282, 217);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(222, 37);
+            this.Exit.TabIndex = 4;
+            this.Exit.Text = "Exit";
+            this.Exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            this.Exit.MouseLeave += new System.EventHandler(this.Exit_MouseLeave);
+            this.Exit.MouseHover += new System.EventHandler(this.Exit_MouseHover);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Exit);
             this.Controls.Add(this.NewGame);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menu_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,5 +120,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label NewGame;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label Exit;
     }
 }

@@ -20,6 +20,7 @@ namespace GAMETARAKAN
         int seconds = 0;
         int minutes = 0;
         public static string endTime;
+        Menu menu = new Menu();
         public Game()
         {
             InitializeComponent();
@@ -27,7 +28,10 @@ namespace GAMETARAKAN
 
         private void Game_Load(object sender, EventArgs e)
         {
-
+            seconds = 0;
+            minutes = 0;
+            pictureBox2.Location = new Point (25,420);
+            Time.Enabled = true;
         }
 
         private void Leave_MouseHover(object sender, EventArgs e)
@@ -44,14 +48,21 @@ namespace GAMETARAKAN
 
         private void LeaveGame_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
-            Close();
+            Hide();
+            menu.FormClosed += (s, args) => this.Close();
             menu.Show();
         }
 
         private void Clock(object sender, EventArgs e)
         {
-            seconds++;
+            if (pictureBox2.Bounds.IntersectsWith(Finish.Bounds))
+            {
+                Time.Enabled = false;
+            }
+            else
+            {
+                seconds++;
+            }
             if (seconds >= 60)
             {
                 minutes++;
@@ -65,23 +76,27 @@ namespace GAMETARAKAN
             {
                 Clock_label.Text = $"{minutes.ToString()}:0{seconds.ToString()}";
             }
-
-        }
-
-        private void Game_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
+            if (minutes>=60)
+            {
+                Time.Enabled = false;
+                endTime = $"Ты просидел тут уже час...";
+                var result = MessageBox.Show(endTime, "Конец игры", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+                if (result == DialogResult.Cancel)
+                {
+                    Hide();
+                    menu.FormClosed += (s, args) => this.Close();
+                    menu.Show();
+                }
+                else
+                {
+                    Game_Load(sender, e);
+                }
+            }
         }
 
         private void Game_KeyDown(object sender, KeyEventArgs e)
         {
 
-            //if (pictureBox2.Bounds.IntersectsWith(Finish.Bounds))
-            //{
-            //    //do finish sign with time and leave to menu
-            //    endTime = Clock_label.Text = $"{minutes.ToString()}:{seconds.ToString()}";
-            //    MessageBox.Show(endTime);
-            //}
 
 
             if (e.KeyData == Keys.Up)
@@ -161,7 +176,20 @@ namespace GAMETARAKAN
                             break;
                         }
                     }
+                }
+            }
 
+            if (pictureBox2.Bounds.IntersectsWith(Finish.Bounds))
+            {
+                timer1.Enabled = false;
+                //do finish sign with time and leave to menu
+                endTime = $"Ваше время: {minutes.ToString()}:{seconds.ToString()}";
+                var result = MessageBox.Show(endTime, "Конец игры", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (result == DialogResult.OK)
+                {
+                    Hide();
+                    menu.FormClosed += (s, args) => this.Close();
+                    menu.Show();
                 }
             }
         }

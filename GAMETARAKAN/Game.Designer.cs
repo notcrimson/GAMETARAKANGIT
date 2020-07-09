@@ -96,6 +96,8 @@
             this.LeaveGame = new System.Windows.Forms.Label();
             this.Time = new System.Windows.Forms.Timer(this.components);
             this.Clock_label = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -130,7 +132,7 @@
             // Finish
             // 
             this.Finish.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.Finish.Location = new System.Drawing.Point(738, 320);
+            this.Finish.Location = new System.Drawing.Point(738, 311);
             this.Finish.Name = "Finish";
             this.Finish.Size = new System.Drawing.Size(43, 15);
             this.Finish.TabIndex = 2;
@@ -760,18 +762,40 @@
             // 
             // Clock_label
             // 
-            this.Clock_label.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Clock_label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Clock_label.Location = new System.Drawing.Point(822, 39);
+            this.Clock_label.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Clock_label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Clock_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Clock_label.Location = new System.Drawing.Point(881, 42);
             this.Clock_label.Name = "Clock_label";
-            this.Clock_label.Size = new System.Drawing.Size(109, 23);
+            this.Clock_label.Size = new System.Drawing.Size(66, 28);
             this.Clock_label.TabIndex = 66;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(12, 470);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(783, 32);
+            this.label1.TabIndex = 67;
+            this.label1.Text = "Используйте стрелки для передвижения";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label61.Location = new System.Drawing.Point(804, 41);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(72, 24);
+            this.label61.TabIndex = 68;
+            this.label61.Text = "Время:";
             // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 473);
+            this.ClientSize = new System.Drawing.Size(954, 502);
+            this.Controls.Add(this.label61);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Clock_label);
             this.Controls.Add(this.LeaveGame);
             this.Controls.Add(this.label32);
@@ -837,10 +861,10 @@
             this.Controls.Add(this.Finish);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TARAKAN";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Game_FormClosing);
             this.Load += new System.EventHandler(this.Game_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyUp);
@@ -848,6 +872,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -920,6 +945,8 @@
         private System.Windows.Forms.Label LeaveGame;
         private System.Windows.Forms.Timer Time;
         private System.Windows.Forms.Label Clock_label;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label61;
     }
 }
 

@@ -19,8 +19,9 @@ namespace GAMETARAKAN
 
         private void NewGame_Click(object sender, EventArgs e)
         {
-            Game game = new Game();
             Hide();
+            Game game = new Game();
+            game.FormClosed += (s, args) => this.Close();
             game.Show();
         }
 
@@ -36,9 +37,22 @@ namespace GAMETARAKAN
             NewGame.BorderStyle = BorderStyle.None;
         }
 
-        private void Menu_FormClosed(object sender, FormClosedEventArgs e)
+
+        private void Exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Exit_MouseHover(object sender, EventArgs e)
+        {
+            Exit.BackColor = Color.LightGray;
+            Exit.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void Exit_MouseLeave(object sender, EventArgs e)
+        {
+            Exit.BackColor = Color.White;
+            Exit.BorderStyle = BorderStyle.None;
         }
     }
 }
